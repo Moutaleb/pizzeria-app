@@ -10,6 +10,8 @@ public class DaoMemoireFactory implements DaoFactoy {
 	
 	public DaoMemoireFactory() {
 		// TODO Auto-generated constructor stub
+		
+		
 	}
 	
 	@Override

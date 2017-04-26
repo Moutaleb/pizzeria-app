@@ -15,8 +15,7 @@
 	
 	<groupId>pizzeria-app</groupId>
 	<artifactId>pizzeria-dao-fichier</artifactId>
-	<name>pizzeria-dao-fichier</name>
-	<url>http://maven.apache.org</url>
+	<name>PIZZERIA - DAO - FICHIER</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>

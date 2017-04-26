@@ -1,4 +1,4 @@
-package fr.pizzeria.console;
+package org.pizzeria.dao.jdbc;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

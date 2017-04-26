@@ -8,8 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>pizzeria-app</groupId>
   <artifactId>pizzeria-dao-memoire</artifactId>
-  <name>pizzeria-dao-memoire</name>
-  <url>http://maven.apache.org</url>
+  <name>PIZZERIA - DAO - MEMOIRE</name>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>

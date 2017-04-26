@@ -12,8 +12,8 @@
 	<packaging>jar</packaging>
 	
 	<artifactId>pizzeria-domain</artifactId>
-	<name>pizzeria-domain</name>
-	<url>http://maven.apache.org</url>
+	<name>PIZZERIA - DOMAIN</name>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>

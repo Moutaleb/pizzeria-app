@@ -3,7 +3,10 @@ package fr.pizzeria.console;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.ResourceBundle;
 import java.util.Scanner;
+
+import org.pizzeria.dao.jdbc.JDBC;
 
 import com.github.lalyos.jfiglet.FigletFont;
 
@@ -17,8 +20,31 @@ import fr.pizzeria.dao.fichier.DaoFichierFactory;
 
 public class PizzeriaAdminConsoleApp {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
+		
+		
 
+		
+		ResourceBundle bundle = ResourceBundle.getBundle("application");
+	    String value = bundle.getString("dao.impl");
+	    
+	  String $dao = "fr.pizzeria.dao.memoire.PizzaDaoMemoire";
+	    
+				
+		/*Class<?> maClasse;
+		try {
+			maClasse = Class.forName(value);
+			IPizzaDao unObjet = (IPizzaDao) maClasse.newInstance();
+			unObjet.findAllPizzas().forEach(p -> p.toString());
+			
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+			e.printStackTrace();
+		}*/
+		
+	
+   
+	    
+	    
 		Scanner question = new Scanner(System.in);
 		question.useLocale(Locale.US);
 	
@@ -29,9 +55,14 @@ public class PizzeriaAdminConsoleApp {
 		//Stock
 		
 		DaoFactoy daoFactoy = new DaoFichierFactory();
+	
+		
+				
+		
+		IPizzaDao pizzaDao = daoFactoy.getPizzaDao(); 	
 		
 		
-		IPizzaDao pizzaDao = daoFactoy.getPizzaDao(); 
+		//IPizzaDao pizzaDao = new JDBC();
 
 		OptionMenu lister = new ListerPizzaOptionMenu(pizzaDao);
 		OptionMenu ajouter = new AjouterPizzaOptionMenu(pizzaDao, question);

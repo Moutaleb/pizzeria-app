@@ -8,8 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>pizzeria-app</groupId>
   <artifactId>pizzeria-dao-fichier</artifactId>
-  <name>pizzeria-dao-fichier</name>
-  <url>http://maven.apache.org</url>
+  <name>PIZZERIA - DAO - FICHIER</name>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>

@@ -6,6 +6,7 @@ import java.util.List;
 import fr.pizzeria.dao.api.DeletePizzaException;
 import fr.pizzeria.dao.api.IPizzaDao;
 import fr.pizzeria.dao.api.SavePizzaException;
+import fr.pizzeria.dao.api.StockageException;
 import fr.pizzeria.dao.api.UpdatePizzaException;
 import fr.pizzeria.domain.CategoriePizza;
 import fr.pizzeria.domain.Pizza;
@@ -111,6 +112,11 @@ public class PizzaDaoMemoire implements IPizzaDao {
 
 	public void setListPizza(List<Pizza> listPizza) {
 		this.listPizza = listPizza;
+	}
+
+	@Override
+	public void importDonne() throws StockageException {
+		System.err.println("« Veuillez configurer l’application avec une implémentation base de données ».");
 	}
 
 }

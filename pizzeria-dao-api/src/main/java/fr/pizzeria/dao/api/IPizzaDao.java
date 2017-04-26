@@ -15,6 +15,8 @@ public interface IPizzaDao {
 	void updatePizza(String codePizza, Pizza pizza) throws StockageException;
 
 	void deletePizza(String codePizza) throws StockageException;
+	
+	void importDonne() throws StockageException;
 
 	int existPizza(String codeATester);
 

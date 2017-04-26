@@ -16,8 +16,8 @@
 	<!-- <packaging>jar</packaging> -->
 
 	<artifactId>pizzeria-dao-api</artifactId>
-	<name>pizzeria-dao-api</name>
-	<url>http://maven.apache.org</url>
+	<name>PIZZERIA - DAO - API</name>
+
 
 
 

@@ -18,7 +18,7 @@ public class ListerPizzaOptionMenu extends OptionMenu {
 	public void execute() {
 		
 		
-		System.out.println("Il y a " + Pizza.getNbrPizza() + " Pizza stocké.");
+		//System.out.println("Il y a " + Pizza.getNbrPizza() + " Pizza stocké.");
 		
 		List<Pizza> listPizza = stockage.findAllPizzas();
 		

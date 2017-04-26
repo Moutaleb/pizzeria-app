@@ -13,8 +13,10 @@
 	
 	<groupId>pizzeria-app</groupId>
 	<artifactId>pizzeria-dao-memoire</artifactId>
-	<name>pizzeria-dao-memoire</name>
-	<url>http://maven.apache.org</url>
+	<name>PIZZERIA - DAO - MEMOIRE</name>
+
+
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>

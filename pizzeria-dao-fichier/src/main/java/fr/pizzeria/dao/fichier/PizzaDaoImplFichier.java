@@ -77,4 +77,10 @@ public class PizzaDaoImplFichier implements IPizzaDao {
 		return 0;
 	}
 
+	@Override
+	public void importDonne() throws StockageException {
+		System.err.println("« Veuillez configurer l’application avec une implémentation base de données ».");
+		
+	}
+
 }
