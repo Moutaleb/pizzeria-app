@@ -54,15 +54,15 @@ public class PizzeriaAdminConsoleApp {
 		
 		//Stock
 		
-		DaoFactoy daoFactoy = new DaoFichierFactory();
+		//DaoFactoy daoFactoy = new DaoFichierFactory();
 	
 		
 				
 		
-		IPizzaDao pizzaDao = daoFactoy.getPizzaDao(); 	
+		//IPizzaDao pizzaDao = daoFactoy.getPizzaDao(); 	
 		
 		
-		//IPizzaDao pizzaDao = new JDBC();
+		IPizzaDao pizzaDao = new JDBC();
 
 		OptionMenu lister = new ListerPizzaOptionMenu(pizzaDao);
 		OptionMenu ajouter = new AjouterPizzaOptionMenu(pizzaDao, question);
