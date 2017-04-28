@@ -8,28 +8,29 @@
 		<artifactId>pizzeria-app</artifactId>
 		<version>1.0.0</version>
 	</parent>
-
-	<packaging>jar</packaging>
-
-	<artifactId>pizzeria-domain</artifactId>
-	<name>PIZZERIA - DOMAIN</name>
-
+	<groupId>pizzeria-app</groupId>
+	<artifactId>pizzeria-client</artifactId>
+	<version>1.0.0</version>
+	<name>pizzeria-client</name>
+	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
-
-
-
 		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.1-api</artifactId>
-
+			<groupId>${project.groupId}</groupId>
+			<artifactId>pizzeria-domain</artifactId>
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.directory.studio</groupId>
+			<artifactId>org.apache.commons.codec</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

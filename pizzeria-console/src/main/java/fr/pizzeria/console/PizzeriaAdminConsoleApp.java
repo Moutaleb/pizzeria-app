@@ -5,8 +5,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.logging.Level;
 
 import org.pizzeria.dao.jdbc.JDBC;
+import org.pizzeria.dao.jpa.PizzaDaoJpa;
 
 import com.github.lalyos.jfiglet.FigletFont;
 
@@ -29,7 +31,7 @@ public class PizzeriaAdminConsoleApp {
 	    String value = bundle.getString("dao.impl");
 	    
 	  String $dao = "fr.pizzeria.dao.memoire.PizzaDaoMemoire";
-	    
+	  java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.SEVERE);
 				
 		/*Class<?> maClasse;
 		try {
@@ -62,7 +64,9 @@ public class PizzeriaAdminConsoleApp {
 		//IPizzaDao pizzaDao = daoFactoy.getPizzaDao(); 	
 		
 		
-		IPizzaDao pizzaDao = new JDBC();
+		//IPizzaDao pizzaDao = new JDBC();
+		
+		IPizzaDao pizzaDao = new PizzaDaoJpa();
 
 		OptionMenu lister = new ListerPizzaOptionMenu(pizzaDao);
 		OptionMenu ajouter = new AjouterPizzaOptionMenu(pizzaDao, question);

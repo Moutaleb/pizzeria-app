@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import fr.pizzeria.dao.api.IPizzaDao;
 import fr.pizzeria.dao.api.StockageException;
@@ -16,11 +17,25 @@ import fr.pizzeria.domain.Pizza;
 
 public class JDBC implements IPizzaDao {
 	
+
 	
 			
+	private String url; //jdbc:mysql://localhost:3306/pizzeria?useSSL=false
+	private String username; //root
+	private String password; //""
+
+
 	public JDBC(){
 		
+		
+		ResourceBundle bundle = ResourceBundle.getBundle("jdbc");
+	    url = bundle.getString("jdbc.url");
+	    username = bundle.getString("jdbc.username");
+	    password = bundle.getString("jdbc.password");
+		
 		try {
+			
+			
 			Class.forName("com.mysql.jdbc.Driver");
 			//myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pizzeria?useSSL=false","root", "");
 			//statement = myConnection.createStatement();
@@ -45,7 +60,7 @@ public class JDBC implements IPizzaDao {
 		PreparedStatement selectPizzaSt;
 		try {
 			
-			myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pizzeria?useSSL=false","root", "");
+			myConnection = DriverManager.getConnection(url,username, password);
 			statement = myConnection.createStatement();
 			selectPizzaSt = myConnection.prepareStatement("SELECT * FROM PIZZA");
 			ResultSet resultat = selectPizzaSt.executeQuery();
@@ -77,7 +92,7 @@ public class JDBC implements IPizzaDao {
 		
 		PreparedStatement selectPizzaSt;
 		try {
-			myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pizzeria?useSSL=false","root", "");
+			myConnection = DriverManager.getConnection(url,username, password);
 			statement = myConnection.createStatement();
 			selectPizzaSt = myConnection.prepareStatement("INSERT INTO `pizza` (`ID`, `Nom`, `Prenom`, `prix`) VALUES (NULL, ?, ?, ?)" ); 
 			selectPizzaSt.setString(1, pizza.getCode());
@@ -105,7 +120,7 @@ public class JDBC implements IPizzaDao {
 		
 		PreparedStatement selectPizzaSt;
 		try {
-			myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pizzeria?useSSL=false","root", "");
+			myConnection = DriverManager.getConnection(url,username, password);
 			statement = myConnection.createStatement();
 			selectPizzaSt = myConnection.prepareStatement("UPDATE `pizza` SET `Nom` = ? '', `Prenom` = ? '', `prix` = ? '' WHERE `pizza`.`NOM`=? " );
 			selectPizzaSt.setString(1, pizza.getCode());
@@ -133,7 +148,7 @@ public class JDBC implements IPizzaDao {
 		Connection myConnection;
 		PreparedStatement selectPizzaSt;
 		try {
-			myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pizzeria?useSSL=false","root", "");
+			myConnection = DriverManager.getConnection(url,username, password);
 			statement = myConnection.createStatement();
 			
 			selectPizzaSt = myConnection.prepareStatement("DELETE FROM `pizza` WHERE `pizza`.`NOM`= ?" ); 

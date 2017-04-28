@@ -24,6 +24,27 @@
       </plugins>
     </pluginManagement>
   </build>
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <properties>
+        <dao>fr.pizzeria.dao.memoire.DaoMemoryFactory</dao>
+      </properties>
+    </profile>
+    <profile>
+      <id>prod</id>
+      <dependencies>
+        <dependency>
+          <groupId>dta</groupId>
+          <artifactId>pizzeria-dao-fichier</artifactId>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+      <properties>
+        <dao>fr.pizzeria.dao.fichier.DaoFichierFactory</dao>
+      </properties>
+    </profile>
+  </profiles>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -39,6 +60,7 @@
     </dependency>
   </dependencies>
   <properties>
+    <dao>fr.pizzeria.dao.memoire.PizzaDaoMemoire</dao>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 </project>
